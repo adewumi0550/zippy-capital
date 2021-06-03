@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zippy/constants/Color.dart';
 
 class Search extends StatelessWidget {
@@ -21,7 +22,7 @@ class Search extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
               prefixIcon: Icon(
-                Icons.money_sharp,
+                FontAwesomeIcons.moneyBill,
                 color: primaryColor,
               ),
               contentPadding: const EdgeInsets.only(top: 15.0),

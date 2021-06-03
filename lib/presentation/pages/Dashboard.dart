@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zippy/constants/Color.dart';
 
 class Dashboard extends StatefulWidget {
@@ -53,7 +54,7 @@ class _DashboardState extends State<Dashboard> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('Total loan amount', style: TextStyle(color: secondaryColor,fontSize: 13,), ),
-                                    Text('...', ),
+                                    Icon(FontAwesomeIcons.ellipsisH,color: primaryColor,)
                                   ],
                                 ),
 
@@ -62,7 +63,7 @@ class _DashboardState extends State<Dashboard> {
 
                                     style: DefaultTextStyle.of(context).style,
                                     children: const <TextSpan>[
-                                      TextSpan(text: '#562.600', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32,color: primaryColor)),
+                                      TextSpan(text: '562.600', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 32,color: primaryColor)),
                                       TextSpan(text: '.00', style: TextStyle(fontWeight: FontWeight.bold,)),
                                     ],
                                   ),
@@ -136,10 +137,10 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       SizedBox(height:  MediaQuery.of(context).size.height*0.04,),
 
-                      dashboardCard(title:'Apply for a Loan', description:'Receive funds in your account \n in as little as 5 minutes'),
+                      dashboardCard(title:'Apply for a Loan', description:'Receive funds in your account \n in as little as 5 minutes',pics: 'assets/icons/bookkeeping.png'),
 
                       SizedBox(height:  MediaQuery.of(context).size.height*0.01,),
-                      dashboardCard(title:'Get Loans to Pay Bills ', description:'We can help you find the \n most suitable options for \n loans to pay your bills.'),
+                      dashboardCard(title:'Get Loans to Pay Bills ', description:'We can help you find the \n most suitable options for \n loans to pay your bills.', pics: 'assets/icons/balance.png'),
                     ],
                   )
               ],
@@ -152,7 +153,7 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  dashboardCard({title, description}) {
+  dashboardCard({title, description,pics}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -177,7 +178,7 @@ class _DashboardState extends State<Dashboard> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top:18.0,right: 8.0),
-                child: Icon(Icons.location_on),
+                child: Image(image: AssetImage(pics)),
               )
 
 

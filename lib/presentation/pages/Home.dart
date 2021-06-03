@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:zippy/constants/Color.dart';
 import 'package:zippy/presentation/pages/LoanContract.dart';
 import 'Dashboard.dart';
@@ -50,15 +51,15 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.refresh,size: 23,),
+              icon: Icon(FontAwesomeIcons.recycle,size: 23,),
               label: 'Activity',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.toys_outlined, size: 23,),
+              icon: Icon(FontAwesomeIcons.seedling, size: 23,),
               label: 'Loan',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person,size: 23,),
+              icon: Icon(Icons.person_outline,size: 23,),
               label: 'Profile',
             ),
           ]),
