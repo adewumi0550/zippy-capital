@@ -49,10 +49,12 @@ class _LoanState extends State<Loan> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
 
-                      dashboardCard(title:'Consumer loan', description:'Manage your financial life'),
+                      // SizedBox(height:  MediaQuery.of(context).size.height*0.04,),
 
-                      SizedBox(height:  MediaQuery.of(context).size.height*0.04,),
-                      dashboardCard(title:'Refinance', description:'Save your money  \n by reducing overpayment '),
+                      dashboardCard(title:'Consumer loan', description:'Manage your financial life',pics: 'assets/icons/purpose.png'),
+
+                      SizedBox(height:  MediaQuery.of(context).size.height*0.01,),
+                      dashboardCard(title:'Refinance', description:'Save your money \n by reducing overpayment ', pics: 'assets/icons/payment.png'),
                       buttonLoan()
 
                     ],
@@ -67,11 +69,11 @@ class _LoanState extends State<Loan> {
     );
   }
 
-  dashboardCard({title, description}) {
+  dashboardCard({title, description,pics}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: BoxDecoration(color: Colors.white,),
+        decoration: BoxDecoration(color: cardBackground),
         height: MediaQuery.of(context).size.height/6,
 
         child: Padding(
@@ -86,13 +88,18 @@ class _LoanState extends State<Loan> {
                 children: <Widget>[
                   Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
                   SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-                  Text(description, style: TextStyle(fontSize: 13, color: colorCard),)
+                  Text(description, style: TextStyle(fontSize: 13, color: colorCard),),
+
+                  Padding(
+                    padding: const EdgeInsets.only(top:8.0),
+                    child: Text('Up to ₦10 million', style: TextStyle(color: primaryColor),),
+                  ),
                 ],
 
               ),
               Padding(
                 padding: const EdgeInsets.only(top:18.0,right: 8.0),
-                child: Icon(Icons.location_on),
+                child: Image(image: AssetImage(pics)),
               )
 
 
@@ -102,7 +109,6 @@ class _LoanState extends State<Loan> {
       ),
     );
   }
-
   Widget buttonLoan() {
 
 
@@ -112,7 +118,7 @@ class _LoanState extends State<Loan> {
             child: MaterialButton(
                 minWidth: double.infinity,
                 height: 60.0,
-                color: hoverColor,
+                color: secondaryColor,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),

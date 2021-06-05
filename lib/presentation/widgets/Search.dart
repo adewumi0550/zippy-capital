@@ -13,12 +13,12 @@ class Search extends StatelessWidget {
           height: 50,
           width: MediaQuery.of(context).size.width - 30,
           padding: EdgeInsets.only(left: 10, right: 30),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black12, spreadRadius: 5.5, blurRadius: 5.5)
-              ]),
+          // decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     boxShadow: [
+          //       BoxShadow(
+          //           color: Colors.black12, spreadRadius: 5.5, blurRadius: 5.5)
+          //     ]),
           child: TextFormField(
             decoration: InputDecoration(
               prefixIcon: Icon(
